@@ -1,1 +1,22 @@
-<h1>Here's the new view</h1>
+<h1>New Article</h1>
+
+<%= form_with model: @article do |form| %>
+  <div>
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
+  </div>
+
+  <div>
+    <%= form.label :body %><br>
+    <%= form.text_area :body %>
+  </div>
+
+	<div>
+    <%= form.label :importance %><br>
+    <%= form.number_field :importance %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

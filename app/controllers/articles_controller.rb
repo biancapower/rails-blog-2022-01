@@ -2,14 +2,28 @@ class ArticlesController < ApplicationController
 	def index
 		@time = Time.now
 		@articles = Article.all
+
+		console
 	end
 
 	def new
 		@article = Article.new
+
+		console
 	end
 
 	def create
-		@article = Article.new(title: "This is a great lesson!", body: "Breakfast is the most important meal of the day", importance: 9)
-		@article.save
+		@article = Article.new(article_params)
+		
+		if @article.save
+			redirect_to articles_path
+		else
+			render :new
+		end
 	end
+
+	private
+		def article_params
+			params.require(:article).permit(:title, :body, :importance)
+		end
 end
