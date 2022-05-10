@@ -6,6 +6,12 @@ class ArticlesController < ApplicationController
 		console
 	end
 
+	def show
+		@article = Article.find(params[:id])
+
+		console
+	end
+
 	def new
 		@article = Article.new
 
