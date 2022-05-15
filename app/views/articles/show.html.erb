@@ -1,3 +1,4 @@
 <h1><%= @article.title %></h1>
 <p>Body: <%= @article.body %></p>
 <p>Importance: <%= @article.importance %></p>
+<p><em>This post is <%= time_ago_in_words(@article.created_at) %> old</em></p>
