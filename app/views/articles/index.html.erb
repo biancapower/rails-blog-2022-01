@@ -11,4 +11,21 @@
 	<% end %>
 </ul>
 
+<table>
+		<tr>
+			<th>Title</th>
+			<th>Body</th>
+			<th>Importance</th>
+		</tr>
+	<% @articles.each do |article| %>
+		<tr style="color:<%= cycle("red", "green", "blue", name: "colors") %>">
+			<td><%= link_to article.title, article_path(article) %></td>
+			<td>
+				<%= article.body %>
+			</td>
+			<td><%= article.importance %></td>
+		</tr>
+	<% end %>
+</table>
+
 <div><%= link_to "New article", new_article_path %></div>
