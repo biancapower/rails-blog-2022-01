@@ -6,7 +6,9 @@
 <ul>
 	<% @articles.each do |article| %>
 		<li>
-			<%= article.title %>
+			<%= link_to article.title, article_path(article) %>
 		</li>
 	<% end %>
-<ul>
+</ul>
+
+<div><%= link_to "New article", new_article_path %></div>
