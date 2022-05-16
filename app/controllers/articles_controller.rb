@@ -3,7 +3,7 @@ class ArticlesController < ApplicationController
 		@time = Time.now
 		@articles = Article.all
 
-		console
+		# console
 	end
 
 	def show
@@ -13,7 +13,7 @@ class ArticlesController < ApplicationController
 	def new
 		@article = Article.new
 
-		console
+		# console
 	end
 
 	def create
