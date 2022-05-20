@@ -6,3 +6,6 @@
 <p>Updated <%= time_ago_in_words(@article.updated_at) %> ago</p>
 
 <p><%= link_to "Edit this article", edit_article_path %></p>
+<p><%= link_to "Destroy this article", article_path,
+								method: :delete,
+								data: { confirm: "Are you sure?" } %></p>
