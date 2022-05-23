@@ -10,3 +10,8 @@
 				article_path,
 				method: :delete,
 				data: { confirm: "Do you really want to delete this amazing article?" } %></p>
+
+<ul>
+	<li><%= link_to_unless_current "Prev", @article.prev %></li>
+	<li><%= link_to_unless_current "Next", @article.next %></li>
+</ul>
