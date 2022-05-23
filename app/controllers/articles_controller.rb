@@ -9,7 +9,7 @@ class ArticlesController < ApplicationController
 	def show
 		@article = Article.find(params[:id])
 
-		console
+		# console
 	end
 
 	def new
@@ -40,6 +40,14 @@ class ArticlesController < ApplicationController
 		else
 			render :edit
 		end
+	end
+
+	def destroy
+		@article = Article.find(params[:id])
+
+		@article.destroy
+
+		redirect_to home_path
 	end
 
 	private
