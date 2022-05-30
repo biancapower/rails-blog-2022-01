@@ -10,8 +10,8 @@
 
 	Article.create([
 		{ 
-			title: "This is title #{i}",
-			body: 'Laborum in mollit cupidatat dolore pariatur anim eiusmod dolore dolor sit laborum Lorem adipisicing cillum. Cupidatat ut deserunt in velit amet proident nulla ea exercitation. Aliqua eu nisi enim irure culpa Lorem commodo occaecat in fugiat adipisicing.',
+			title: Faker::TvShows::DrWho.quote,
+			body: Faker::Quotes::Shakespeare.as_you_like_it_quote,
 			importance: rand(1..10)
 		}
 	])
