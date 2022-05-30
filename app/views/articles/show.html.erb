@@ -5,6 +5,9 @@
 <p>Created <%= time_ago_in_words(@article.created_at) %> ago</p>
 <p>Updated <%= time_ago_in_words(@article.updated_at) %> ago</p>
 
+<p><%= link_to_unless_current "Go to next article", @article.next %></p>
+<p><%= link_to_unless_current "Go to previous article", @article.prev %></p>
+
 <p><%= link_to "Edit this article", edit_article_path %></p>
 <p><%= link_to "Delete this article",
 				article_path,
