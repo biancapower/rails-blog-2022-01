@@ -8,11 +8,13 @@
 <p><%= link_to_unless_current "Go to next article", @article.next %></p>
 <p><%= link_to_unless_current "Go to previous article", @article.prev %></p>
 
-<p><%= link_to "Edit this article", edit_article_path %></p>
-<p><%= link_to "Delete this article",
-				article_path,
-				method: :delete,
-				data: { confirm: "Do you really want to delete this amazing article?" } %></p>
+<% if user_signed_in? %>
+  <p><%= link_to "Edit this article", edit_article_path %></p>
+  <p><%= link_to "Delete this article",
+          article_path,
+          method: :delete,
+          data: { confirm: "Do you really want to delete this amazing article?" } %></p>
+<% end %>
 
 <h2>Comments</h2>
 <% @article.comments.each do |comment| %>

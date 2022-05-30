@@ -1,1 +1,14 @@
-<p><%= link_to_unless_current "Go to Home", home_path %> | <%= link_to_unless_current "New Article", new_article_path %></p>
+<nav> 
+		<span>
+			<%= link_to_unless_current "Go to Home", home_path %> | <%= link_to_unless_current "New Article", new_article_path %>
+    </span>
+		<span style="float: right">
+			<% if user_signed_in? %>
+				<span class='nav-greeting'> <%= "Welcome back, #{current_user.username}"%> </span>
+				<%= link_to "Sign Out", destroy_user_session_path, method: "delete" %>
+			<% else %>
+				<%= link_to "Sign In", new_user_session_path  %>
+				<%= link_to "Sign Up", new_user_registration_path %>
+			<% end %>
+		</span>
+</nav>
